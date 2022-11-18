@@ -1,20 +1,27 @@
+/*
+Muneeb Shah
+Shahm58
+400307005
+*/
+
+
 /*  Time of Flight for 2DX4 -- Studio W8-0
-                Code written to support data collection from VL53L1X using the Ultra Light Driver.
-                I2C methods written based upon MSP432E4 Reference Manual Chapter 19.
-                Specific implementation was based upon format specified in VL53L1X.pdf pg19-21
-                Code organized according to en.STSW-IMG009\Example\Src\main.c
-                
-                The VL53L1X is run with default firmware settings.
+Code written to support data collection from VL53L1X using the Ultra Light Driver.
+I2C methods written based upon MSP432E4 Reference Manual Chapter 19.
+Specific implementation was based upon format specified in VL53L1X.pdf pg19-21
+Code organized according to en.STSW-IMG009\Example\Src\main.c
+
+The VL53L1X is run with default firmware settings.
 
 
-            Written by Tom Doyle
-            Updated by  Hafez Mousavi Garmaroudi
-            Last Update: March 17, 2020
-						
-						Last Update: March 03, 2022
-						Updated by Hafez Mousavi
-						__ the dev address can now be written in its original format. 
-								Note: the functions  beginTxI2C and  beginRxI2C are modified in vl53l1_platform_2dx4.c file
+Written by Professor Tom Doyle
+Updated by  TA Hafez Mousavi Garmaroudi
+Last Update: March 17, 2020
+
+Last Update: March 03, 2022
+Updated by Hafez Mousavi
+__ the dev address can now be written in its original format. 
+Note: the functions  beginTxI2C and  beginRxI2C are modified in vl53l1_platform_2dx4.c file
 
 */
 #include <stdint.h>
@@ -226,8 +233,8 @@ void PortJ_Init(void){
   GPIO_PORTJ_DIR_R &= ~0x02;    										// make PJ1 input
   GPIO_PORTJ_DEN_R |= 0x02;     										// enable digital I/O on PJ1
 	
-	GPIO_PORTJ_PCTL_R &= ~0x000000F0;	 								//  configure PJ1 as GPIO 
-	GPIO_PORTJ_AMSEL_R &= ~0x02;											//  disable analog functionality on PJ1
+	GPIO_PORTJ_PCTL_R &= ~0x000000F0;	 								//Â  configure PJ1 as GPIO 
+	GPIO_PORTJ_AMSEL_R &= ~0x02;											//Â Â disable analog functionality on PJ1
 	GPIO_PORTJ_PUR_R |= 0x02;													//	enable weak pull up resistor
 }
 
@@ -271,8 +278,8 @@ void PortK_Init(void){
   GPIO_PORTK_DIR_R &= ~0x01;    										// make PJ1 input
   GPIO_PORTK_DEN_R |= 0x01;     										// enable digital I/O on PJ1
 	
-	//GPIO_PORTK_PCTL_R &= ~0x000000F0;	 								//  configure PJ1 as GPIO 
-	GPIO_PORTK_AMSEL_R &= ~0x01;											//  disable analog functionality on PK1
+	//GPIO_PORTK_PCTL_R &= ~0x000000F0;	 								//Â  configure PJ1 as GPIO 
+	GPIO_PORTK_AMSEL_R &= ~0x01;											//Â Â disable analog functionality on PK1
 	//GPIO_PORTK_PUR_R |= 0x01;													//	enable weak pull up resistor
 }
 
